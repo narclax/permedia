@@ -1,0 +1,105 @@
+.preloader .txt-loading .preloader-text .preloader-text-svg .svg-text {
+    font-size: 100px;
+}
+
+:root {
+    --primary-color: #8b0101;          
+}
+.ak-section-heading.ak-style-1 .ak-section-left .ak-section-title .highlight {
+    color: #8b0101;
+}
+
+.ak-footer.style-1 .ak-footer-container .footer-content .about-company .about-company-desp span {
+    font-style: normal;
+}
+
+.ak-footer.style-1 .ak-footer-container .footer-content .about-company .footer-logo {
+    max-width: 162px;
+    max-height: 150px;
+    margin-bottom: 25px;
+}
+
+.ak-footer.style-1 .ak-footer-container .footer-content .address-phn .phn {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 130%;
+    color: #ffffff;
+}
+
+.ak-site_branding img {
+    max-height: 150px;
+}
+
+
+.digital-agencye-hero.style-1 .hero-left-column .title-box .title .agency {
+    font-size: 150PX;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.about-content-style2 .about-title {
+    font-style: normal;    
+    font-family: var(--primary-font-family);
+}
+
+.ak-section-heading.ak-style-1 .ak-section-left .ak-section-title .highlight {
+    font-weight: 700;
+    font-style: normal;
+    font-family: var(--primary-font-family);
+}
+
+.highlight-text {
+    font-style: normal;
+    font-weight: 700;
+    font-family: var(--primary-font-family);
+}
+
+.newsletter-content .newsletter-title .highlight {
+    font-style: normal;
+    font-family: var(--primary-font-family);
+    font-weight: 700;
+    color: #8b0101;
+    position: relative;
+}
+
+.ak-footer.style-1 .ak-footer-container .footer-content .about-company .about-company-desp {
+    font-size: 16px;
+}
+
+.ak-footer.style-1 .ak-footer-container .footer-content .address-phn .address {
+    font-size: 20px;
+}
+
+.ak-footer.style-1 .ak-footer-container .footer-content .address-phn .phn {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+    color: #ffffff;
+}
+
+.digital-agencye-hero.style-1 .hero-right-column {
+    max-width: 45vw;
+}
+
+.digital-agencye-hero.style-1 .hero-left-column .title-box .title .agency {
+    font-size
+Indicates the desired height of glyphs from the font. For scalable fonts, the font-size is a scale factor applied to the EM unit of the font. (Note that certain glyphs may bleed outside their EM box.) For non-scalable fonts, the font-size is converted into absolute units and matched against the declared font-size of the font, using the same absolute coordinate space for both of the matched values.
+Más información
+No mostrar
+: 125px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.digital-agencye-hero.style-1 .hero-left-column .title-box .title .agency
+
+ {
+    font-size: 125px;
+    
+}
