@@ -3,10 +3,10 @@
 }
 
 :root {
-    --primary-color: #8b0101;          
+    --primary-color: #f60019;          
 }
 .ak-section-heading.ak-style-1 .ak-section-left .ak-section-title .highlight {
-    color: #8b0101;
+    color: #f60019;
 }
 
 .ak-footer.style-1 .ak-footer-container .footer-content .about-company .about-company-desp span {
@@ -61,7 +61,7 @@
     font-style: normal;
     font-family: var(--primary-font-family);
     font-weight: 700;
-    color: #8b0101;
+    color: #f60019;
     position: relative;
 }
 

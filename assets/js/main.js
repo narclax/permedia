@@ -1143,13 +1143,6 @@
           });
         });
 
-        $elements.on("mousemove", function (e) {
-          const $elem = $(this);
-          const rect = $elem[0].getBoundingClientRect();
-          const x = (e.clientX - rect.left - rect.width / 2) / 10;
-          const y = (e.clientY - rect.top - rect.height / 2) / 10;
-          gsap.to($hoverImageContainer[0], { x, y, duration: 0.3 });
-        });
       }
     }
   }
