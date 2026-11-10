@@ -112,7 +112,7 @@
   var barsBox = hero.querySelector(".pm-hud__bars"), bars = [], labels = ["Logo", "Lema"];
   ["s1", "s2"].forEach(function (lb, k) {
     var b = document.createElement("button");
-    b.type = "button"; b.className = "pm-hud__bar"; b.setAttribute("aria-label", "Ir al slide " + (k + 1) + ": " + labels[k]);
+    b.type = "button"; b.className = "pm-hud__bar"; b.setAttribute("aria-label", (window.PM_LANG === "en" ? "Go to slide " : "Ir al slide ") + (k + 1) + ": " + labels[k]);
     b.addEventListener("click", function () { master.seek(lb); if (reduce) master.time(master.time() + (k ? 3.4 : 2.4)); });
     barsBox.appendChild(b); bars.push(b);
   });

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="es">
   <head>
     <!-- Meta Tags -->
     <meta charset="utf-8" />
@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/style2.css" />
     <link rel="stylesheet" href="assets/css/custom.css" />
+    <link rel="stylesheet" href="assets/css/gallery.css" />
+    <link rel="stylesheet" href="assets/css/hero.css" />
+      <link rel="stylesheet" href="assets/css/extras.css" />
   </head>
 
   <body class="dark">
@@ -56,6 +59,24 @@
 
     <!-- Preloader -->
 
+    <!-- Top bar -->
+    <div class="pm-topbar">
+      <div class="pm-topbar__in">
+        <div class="pm-topbar__contact">
+          <a href="tel:+18297410633"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>+1 (829) 741-0633</span></a>
+          <a href="mailto:leonidasperdomolopez@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg><span>leonidasperdomolopez@gmail.com</span></a>
+        </div>
+        <div class="pm-topbar__right">
+          <button type="button" class="pm-theme" aria-label="Cambiar tema" title="Cambiar tema" aria-pressed="false"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+          <div class="pm-lang" role="group" aria-label="Idioma / Language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <button type="button" data-lang="es" aria-label="Español">ES</button><i>/</i><button type="button" data-lang="en" aria-label="English">EN</button>
+        </div>
+        </div>
+      </div>
+    </div>
+    <!-- Top bar -->
+
     <!-- Start Header Section -->
       <!-- Start Header Section -->
   <header class="ak-site_header ak-style1 ak-sticky_header">
@@ -64,40 +85,29 @@
         <div class="ak-main_header_in">
           <div class="ak-main-header-left">
             <a class="ak-site_branding dark-logo" href="#">
-              <img src="assets/new/logo.png" style="max-height: 80px;" alt="..." />
+              <img src="assets/new/logo-permedia-dark.png" style="max-height: 56px; width: auto;" alt="PERMEDIA" />
             </a>
             <a class="ak-site_branding white-logo" href="#">
-              <img src="assets/new/logo.png" style="max-height: 80px;" alt="..." />
+              <img src="assets/new/logo-permedia.png" style="max-height: 56px; width: auto;" alt="PERMEDIA" />
             </a>
           </div>
           <div class="ak-main-header-center">
             <div class="ak-nav ak-medium">
               <ul class="ak-nav_list">
-                <li class="menu-item-has-children">
-                  <a href="index.html">Home</a>
-                </li>
-
-                <li>
-                  <a href="projects.html">Proyectos</a>
-                </li>
-
-                <li>
-                  <a href="services.html">Servicios</a>
-                </li>
-                
-                <!--
-                <li>
-                  <a href="#">Contacto</a>
-                </li>
-                -->
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="index.html#galeria">Galería</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
               </ul>
             </div>
           </div>
           <div class="ak-main-header-right">
             <div class="ak-space-between gap-3">
+              <div class="pm-head-social"><a href="https://www.youtube.com/@PERMEDIA92" target="_blank" rel="noopener" aria-label="YouTube de PERMEDIA"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a><a href="https://www.instagram.com/permediard/" target="_blank" rel="noopener" aria-label="Instagram de PERMEDIA"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a></div>
               <div class="btn-wrapper">
                 <div class="button-container">
-                  <a href="#" class="custom-button ak-center">
+                  <a href="https://wa.me/18297410633?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20PERMEDIA." target="_blank" rel="noopener" class="custom-button ak-center">
                     <svg width="180px" height="50px" viewBox="0 0 180 50">
                       <rect
                         x="0"
@@ -156,84 +166,25 @@
       <div class="offcanvas-body-coustom-style">
         <div class="offcanvas-logo-content">
           <a class="ak-site_branding dark-logo" href="#">
-            <img src="assets/new/logo.png" alt="..." />
+            <img src="assets/new/logo-permedia-dark.png" alt="PERMEDIA" />
           </a>
           <a class="ak-site_branding white-logo" href="#">
-            <img src="assets/new/logo.png" alt="..." />
+            <img src="assets/new/logo-permedia.png" alt="PERMEDIA" />
           </a>
         </div>
-        <p class="desp">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
-        </p>
-        <div class="row row-cols-3 g-3">
-          <div class="col">
-            <img
-              src="assets/img/gallery/mini-gallery-1.png"
-              class="img-fluid"
-              alt="..."
-            />
-          </div>
-          <div class="col">
-            <img
-              src="assets/img/gallery/mini-gallery-2.png"
-              class="img-fluid"
-              alt="..."
-            />
-          </div>
-          <div class="col">
-            <img
-              src="assets/img/gallery/mini-gallery-3.png"
-              class="img-fluid"
-              alt="..."
-            />
-          </div>
-          <div class="col">
-            <img
-              src="assets/img/gallery/mini-gallery-4.png"
-              class="img-fluid"
-              alt="..."
-            />
-          </div>
-          <div class="col">
-            <img
-              src="assets/img/gallery/mini-gallery-5.png"
-              class="img-fluid"
-              alt="..."
-            />
-          </div>
-          <div class="col">
-            <img
-              src="assets/img/gallery/mini-gallery-6.png"
-              class="img-fluid"
-              alt="..."
-            />
-          </div>
-        </div>
+        <p class="desp">Resultados, estrategia &amp; crecimiento.</p>
 
         <div class="offcanvas-footer-contant">
           <p class="short-title">Escribenos!</p>
-          <a class="email" href="mailto:info@email.com"> info@email.com </a>
-          <a class="email" href="tel:(406)555-0120">(809) 000-0000</a>
+          <a class="email" href="mailto:leonidasperdomolopez@gmail.com"> leonidasperdomolopez@gmail.com </a>
+          <a class="email" href="tel:+18297410633">+1 (829) 741-0633</a>
           <a href="#">
             Calle la Colina, No. 2 <br />
             Bella Vista, República Dominicana
           </a>
           <div class="ak-height-25 ak-height-lg-25"></div>
           <p class="short-title">Social:</p>
-          <div class="social-icon">
-            <a href="#" class="icon style-2 dark-mode">
-              <i class="flaticon-facebook"></i>
-            </a>
-            <a href="#" class="icon style-2 dark-mode">
-              <i class="flaticon-video"></i>
-            </a>
-            <a href="#" class="icon style-2 dark-mode">
-              <i class="flaticon-linkedin"></i>
-            </a>
-            <a href="#" class="icon style-2 dark-mode">
-              <i class="flaticon-twitter"></i>
-            </a>
-          </div>
+          <div class="pm-social"><a href="https://www.youtube.com/@PERMEDIA92" target="_blank" rel="noopener" aria-label="YouTube de PERMEDIA"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a><a href="https://www.instagram.com/permediard/" target="_blank" rel="noopener" aria-label="Instagram de PERMEDIA"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a></div>
           <div class="ak-height-40 ak-height-lg-40"></div>
         </div>
       </div>
@@ -245,41 +196,77 @@
     
     <!-- End Header Section -->
 
+    <!-- Start Hero animado (SVG) -->
+    <section class="pm-hero" aria-label="PERMEDIA digital agency">
+      <svg class="pm-hero__svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="pmHeroT">
+        <title id="pmHeroT">PERMEDIA digital agency. Resultados, estrategia y crecimiento.</title>
+        <defs>
+          <radialGradient id="pmGlowG" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#f60019" stop-opacity=".45"/><stop offset="1" stop-color="#f60019" stop-opacity="0"/></radialGradient>
+          <linearGradient id="pmShine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+          <filter id="pmBlur" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur id="pmBlurF" stdDeviation="0"/></filter>
+          <mask id="pmLogoMask" maskUnits="userSpaceOnUse" x="-420" y="260" width="840" height="520"><image href="assets/new/logo-permedia.png" x="-380" y="412" width="760" height="253"/></mask>
+        </defs>
+        <rect x="-3000" y="-10" width="8000" height="1100" fill="#0b0b0b"/>
+        <g id="pmStage">
+          <g class="par" id="pmBackPar"><g id="pmBack"></g></g>
+          <g class="par" id="pmRingPar"><g id="pmRings"></g></g>
+          <g class="par" id="pmLogoPar">
+            <g class="fit" id="pmLogoFit" data-cy="540">
+              <g id="pmLogoG">
+                <image id="pmLogo" href="assets/new/logo-permedia.png" x="-380" y="412" width="760" height="253" filter="url(#pmBlur)"/>
+                <g id="pmShineG" opacity="0"><rect id="pmShineR" x="-520" y="380" width="150" height="320" fill="url(#pmShine)" mask="url(#pmLogoMask)" transform="skewX(-18)"/></g>
+                <circle id="pmDotGlow" cx="249" cy="433" r="26" fill="#f60019" opacity="0"/>
+              </g>
+            </g>
+          </g>
+          <g class="par" id="pmLemaPar">
+            <g class="fit" id="pmLemaFit" data-cy="540">
+              <g id="pmLema" font-size="118" font-weight="400" fill="#fff" text-anchor="middle" letter-spacing="-3">
+                <text class="ln" y="500">Resultados,</text>
+                <text class="ln" y="624">estrategia <tspan fill="#f60019">&amp;</tspan></text>
+                <text class="ln" y="748">crecimiento<tspan fill="#f60019">.</tspan></text>
+              </g>
+              <path id="pmLemaLine" pathLength="1" d="M-70 372H70" stroke="#fff" stroke-opacity=".5" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <text id="pmLemaTag" y="836" text-anchor="middle" font-size="24" font-weight="500" fill="#9a9a9a" letter-spacing="14">DIGITAL AGENCY</text>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <div class="pm-hud">
+        <button class="pm-hud__btn" type="button" aria-label="Pausar o reproducir animación">
+          <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <svg class="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <div class="pm-hud__bars"></div>
+      </div>
+      <div class="pm-sr">
+        <h1>PERMEDIA digital agency</h1>
+        <p>Resultados, estrategia &amp; crecimiento.</p>
+      </div>
+    </section>
+    <!-- End Hero animado -->
+
+    <div class="ak-height-150 ak-height-lg-80"></div>
+
+
+
     <!-- Start Hero Section -->
     <!-- Start Hero -->
-    <section class="container container-customize">
+    <section class="container container-customize" id="nosotros">
       <div class="digital-agencye-hero style-1">
         <div class="hero-left-column">
           <div class="title-box">
             <h2 class="title">
-              <span class="digital">SOMOS</span>
-              <span class="agency">PERMEDIA</span>
+              <span class="digital">QUIÉNES</span>
+              <span class="agency">SOMOS</span>
             </h2>
           </div>
-          <div class="cta-box">
-            <div class="hero-btn">
-              <a href="contact.html" class="circle-btn circle-btn-anim">
-                <span class="text text-uppercase">
-                  Comienza
-                  <i class="flaticon-up-right-arrow"></i>
-                  <br />
-                  tu Proyecto
-                </span>
-              </a>
-            </div>
-            <p class="description">
-              En PERMEDIA somos un grupo creativo especializado en producción audiovisual, contenido
-              digital y estrategias de marketing integradas. Acompañamos a marcas, empresas e
-              instituciones en la construcción de narrativas poderosas que conectan con su audiencia, a
-              través de soluciones visuales, campañas efectivas y contenido que deja huella.
-
-            </p>
-          </div>
+          
           
         </div>
         <div class="hero-right-column">
-          <p class="description">
-            Con más de 8 años en el mercado, en <span style="color:#8b0101;">PERMEDIA</span> hemos consolidado nuestra trayectoria
+          <p class="description text-color-shiption">
+            Con más de <span class="pm-red">8 años</span> en el mercado hemos consolidado nuestra trayectoria
             como una agencia creativa versátil, confiable y orientada a resultados. Durante este tiempo
             hemos trabajado junto a empresas de diversos sectores, desarrollando estrategias efectivas,
             producciones audiovisuales de alto nivel y campañas digitales que marcan la diferencia.
@@ -290,17 +277,11 @@
               <img
                 class="star-shape"
                 src="assets/img/shape/star-1.png"
-                alt="..."
+                alt="PERMEDIA"
               />
             </div>
             <div class="hero-right-image"></div>
-            <video autoplay muted loop>
-              <source
-                src="assets/videos/digital-agencye.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
+            <p class="pm-frame-text text-color-shiption">Somos un grupo creativo especializado en producción audiovisual, contenido digital y estrategias de marketing integradas. Acompañamos a marcas, empresas e instituciones en la construcción de narrativas poderosas que conectan con su audiencia, a través de soluciones visuales, campañas efectivas y contenido que deja huella.</p>
           </div>
         </div>
       </div>
@@ -311,7 +292,7 @@
     <!-- Start Abut Section -->
     <!-- Start About -->
     <div class="ak-height-150 ak-height-lg-80"></div>
-    <section>
+    <section id="sobre-nosotros">
       <div class="container">
         <div class="about-content-style2 ak-bg">
           <div class="about-title">NOSOTROS</div>
@@ -338,11 +319,11 @@
             </h5>
             <div class="fade-animation" data-direction="right">
               <a
-                href="#"
+                href="#servicios"
                 class="more-btn fade-animation"
                 data-direction="right"
               >
-                <span class="morebtn-text"> Más </span>
+                <span class="morebtn-text"> Servicios </span>
                 <span class="primary-icon-anim">
                   <i class="flaticon-up-right-arrow"></i>
                   <i class="flaticon-up-right-arrow"></i>
@@ -353,13 +334,42 @@
         </div>
       </div>
     </section>
-    <!-- End About -->    
+    <!-- End About -->
+
+
+    <!-- Start Resultados + Video -->
+    <div class="ak-height-150 ak-height-lg-80"></div>
+    <section class="pm-results" id="resultados">
+      <div class="container">
+        <div class="ak-section-heading ak-style-1">
+          <div class="ak-section-left">
+            <h2 class="ak-section-title text-animation" data-ease="power2.out" data-split-text="chars" data-direction="textTop" data-duration="0.7" data-offset="100%">
+              RESULTADOS, <span class="highlight">ESTRATEGIA</span> &amp; CRECIMIENTO
+            </h2>
+          </div>
+          <div class="ak-section-right">
+            <p class="ak-section-desp text-animation" data-direction="rotationX" data-split-text="lines" data-delay="0.3">
+              Somos especialistas en Marketing Digital con + 6 años de experiencia en diseño, ejecución y optimización de campañas digitales.
+            </p>
+          </div>
+        </div>
+        <div class="pm-video fade-animation" data-pm-video data-direction="bottom">
+          <video autoplay muted loop playsinline preload="auto" poster="assets/img/video/testimonio-poster.webp">
+            <source src="assets/videos/testimonio.mp4" type="video/mp4" />
+            Tu navegador no soporta la reproducción de video.
+          </video>
+          <button class="pm-video__sound" type="button" aria-label="Activar sonido"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg> Activar sonido</button>
+        </div>
+      </div>
+    </section>
+    <!-- End Resultados + Video -->
+    
     <!-- End Abut Section -->
 
     <!-- Start Services Section -->
     <!-- Start  Awards-->
     <div class="ak-height-150 ak-height-lg-80"></div>
-    <section class="container">
+    <section class="container" id="servicios">
       <div class="ak-section-heading ak-style-1 type-2">
         <div
           class="ak-section-left fade-animation"
@@ -387,13 +397,13 @@
               >
                 <path
                   d="M1.33789 1.18359H221.034L209.173 10.9822"
-                  stroke="#FF4A23"
+                  stroke="#f60019"
                   stroke-linecap="round"
                 />
               </svg>
             </span>
-            <a href="services.html">
-              <span> conocer más </span>
+            <a href="#sobre-nosotros">
+              <span> sobre nosotros </span>
             </a>
           </div>
         </div>
@@ -406,68 +416,54 @@
         <div class="awards-list">
           <div class="awards-card fade-animation">
             <div class="awards-hover">
-              <img src="assets/img/award/hover-img-1.png" alt="..." />
+              <img src="assets/img/award/hover-img-1.png" alt="PERMEDIA" />
             </div>
             <h6 class="awards-title">01. Marketing Digital & Servicios Publicitarios</h6>
-            <div class="awards-img">
-              <img src="assets/new/logo.png" style="height:100px;" alt="..." />
-            </div>
+            <div class="awards-img" aria-hidden="true"></div>
           </div>
           <div class="awards-card fade-animation">
             <div class="awards-hover">
-              <img src="assets/img/award/hover-img-1.png" alt="..." />
+              <img src="assets/img/award/hover-img-1.png" alt="PERMEDIA" />
             </div>
             <h6 class="awards-title">02. Coberturas Fotográficas & Video</h6>
-            <div class="awards-img">
-              <img src="assets/new/logo.png" style="height:100px;" alt="..." />
-            </div>
+            <div class="awards-img" aria-hidden="true"></div>
           </div>
           <div class="awards-card fade-animation">
             <div class="awards-hover">
-              <img src="assets/img/award/hover-img-1.png" alt="..." />
+              <img src="assets/img/award/hover-img-1.png" alt="PERMEDIA" />
             </div>
             <h6 class="awards-title">03. Transmisión en Vivo (Live Streaming)</h6>
-            <div class="awards-img">
-              <img src="assets/new/logo.png" style="height:100px;" alt="..." />
-            </div>
+            <div class="awards-img" aria-hidden="true"></div>
           </div>
           <div class="awards-card fade-animation">
             <div class="awards-hover">
-              <img src="assets/img/award/hover-img-1.png" alt="..." />
+              <img src="assets/img/award/hover-img-1.png" alt="PERMEDIA" />
             </div>
             <h6 class="awards-title">04. Desarrollo de Websites</h6>
-            <div class="awards-img">
-              <img src="assets/new/logo.png" style="height:100px;" alt="..." />
-            </div>
+            <div class="awards-img" aria-hidden="true"></div>
           </div>
           <div class="awards-card fade-animation">
             <div class="awards-hover">
-              <img src="assets/img/award/hover-img-1.png" alt="..." />
+              <img src="assets/img/award/hover-img-1.png" alt="PERMEDIA" />
             </div>
             <h6 class="awards-title">05. Coordinación de Eventos</h6>
-            <div class="awards-img">
-              <img src="assets/new/logo.png" style="height:100px;" alt="..." />
-            </div>
+            <div class="awards-img" aria-hidden="true"></div>
           </div>
 
           <div class="awards-card fade-animation">
             <div class="awards-hover">
-              <img src="assets/img/award/hover-img-1.png" alt="..." />
+              <img src="assets/img/award/hover-img-1.png" alt="PERMEDIA" />
             </div>
             <h6 class="awards-title">06. Fotografía & Video de Bodas</h6>
-            <div class="awards-img">
-              <img src="assets/new/logo.png" style="height:100px;" alt="..." />
-            </div>
+            <div class="awards-img" aria-hidden="true"></div>
           </div>
 
           <div class="awards-card fade-animation">
             <div class="awards-hover">
-              <img src="assets/img/award/hover-img-1.png" alt="..." />
+              <img src="assets/img/award/hover-img-1.png" alt="PERMEDIA" />
             </div>
             <h6 class="awards-title">07. Alquiler de Equipos de Sonido</h6>
-            <div class="awards-img">
-              <img src="assets/new/logo.png" style="height:100px;" alt="..." />
-            </div>
+            <div class="awards-img" aria-hidden="true"></div>
           </div>
 
 
@@ -484,88 +480,47 @@
 
     <div class="container-fluid" style="margin-top: 150px;">
         <div class="dm-service-items" style="grid-template-rows: repeat(3, 1fr);">
-          <a href="#" class="width-1 service-item ak-parallax">
-            <img src="assets/img/services/dc-services-1.png" alt="Service 1" />
-            <div class="service-hover-info">
-              <div class="left-content">
-                <p class="mini-title">Market</p>
-                <h5 class="title">Lorem Ipsum</h5>
-              </div>
-              <div class="service-icon-btn">
-                <i class="flaticon-up-right-arrow"></i>
-              </div>
-            </div>
+          <a class="width-1 service-item ak-parallax">
+            <img src="assets/img/services/pm-izquierda.webp" alt="Cobertura en una obra de construcción" loading="lazy" decoding="async" />
           </a>
-          <a href="#" class="width-2 service-item ak-parallax">
-            <img
-              class="ak-parallax"
-              src="assets/img/services/dc-services-2.png"
-              alt="Service 2"
-            />
-            <div class="service-hover-info">
-              <div class="left-content">
-                <p class="mini-title">Market</p>
-                <h5 class="title">Lorem Ipsum</h5>
-              </div>
-              <div class="service-icon-btn">
-                <i class="flaticon-up-right-arrow"></i>
-              </div>
-            </div>
+          <a class="width-2 service-item ak-parallax">
+            <img class="ak-parallax" src="assets/img/services/pm-central.webp" alt="Cobertura de un evento corporativo" loading="lazy" decoding="async" />
           </a>
-          <a href="#" class="width-1 service-item ak-parallax">
-            <img src="assets/img/services/dc-services-3.png" alt="Service 3" />
-            <div class="service-hover-info">
-              <div class="left-content">
-                <p class="mini-title">Market</p>
-                <h5 class="title">Lorem Ipsum</h5>
-              </div>
-              <div class="service-icon-btn">
-                <i class="flaticon-up-right-arrow"></i>
-              </div>
-            </div>
+          <a class="width-1 service-item ak-parallax">
+            <img src="assets/img/services/pm-derecha.webp" alt="Cobertura de un evento institucional" loading="lazy" decoding="async" />
           </a>
-          <!--
-          <a href="#" class="width-2 service-item ak-parallax">
-            <img src="assets/img/services/dc-services-4.png" alt="Service 4" />
-            <div class="service-hover-info">
-              <div class="left-content">
-                <p class="mini-title">Market</p>
-                <h5 class="title">Lorem Ipsum</h5>
-              </div>
-              <div class="service-icon-btn">
-                <i class="flaticon-up-right-arrow"></i>
-              </div>
-            </div>
-          </a>
-          <a href="#" class="width-1 service-item ak-parallax">
-            <img src="assets/img/services/dc-services-5.png" alt="Service 5" />
-            <div class="service-hover-info">
-              <div class="left-content">
-                <p class="mini-title">Market</p>
-                <h5 class="title">Lorem Ipsum</h5>
-              </div>
-              <div class="service-icon-btn">
-                <i class="flaticon-up-right-arrow"></i>
-              </div>
-            </div>
-          </a>
-          <a href="#" class="width-1 service-item ak-parallax">
-            <img src="assets/img/services/dc-services-6.png" alt="Service 6" />
-            <div class="service-hover-info">
-              <div class="left-content">
-                <p class="mini-title">Market</p>
-                <h5 class="title">Lorem Ipsum</h5>
-              </div>
-              <div class="service-icon-btn">
-                <i class="flaticon-up-right-arrow"></i>
-              </div>
-            </div>
-          </a>
-          -->
         </div>
       </div>
     <!-- End  Awards-->    
     <!-- End Services Section -->
+
+    <!-- Start Visión -->
+    <div class="ak-height-150 ak-height-lg-80"></div>
+    <section class="pm-vision" id="vision">
+      <div class="container">
+        <div class="pm-vision__grid">
+          <div class="pm-vision__photo fade-animation" data-direction="right">
+            <div class="frame">
+              <img src="assets/img/nosotros/vision.webp" alt="Equipo de PERMEDIA" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="pm-vision__content">
+            <span class="pm-vision__label fade-animation" data-direction="left">Sobre nosotros</span>
+            <h2 class="pm-vision__title text-animation" data-ease="power2.out" data-split-text="chars" data-direction="textTop" data-duration="0.7" data-offset="100%">
+              NUESTRA <span class="highlight">VISIÓN</span>
+            </h2>
+            <p class="pm-vision__lead fade-animation" data-direction="left" data-delay="0.1">
+              Estamos comprometidos a ofrecer servicios de producción de video de alta calidad.
+            </p>
+            <p class="pm-vision__text fade-animation" data-direction="left" data-delay="0.2">
+              Con un equipo dedicado de expertos, hacemos realidad tu visión creativa, desde la planificación hasta la entrega final, garantizando un proceso de producción fluido y exitoso.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Visión -->
+
 
     <!-- Team -->
     <!-- Start Team  -->
@@ -611,7 +566,7 @@
             >
               <path
                 d="M1.33789 1.18359H221.034L209.173 10.9822"
-                stroke="#FF4A23"
+                stroke="#f60019"
                 stroke-linecap="round"
               />
             </svg>
@@ -686,7 +641,7 @@
       <div class="swiper-slide">
         <a href="https://www.instagram.com/leoperdomophoto/" target="blank" class="border-0 team-card">
           <div class="team-img-top">
-            <img src="assets/img/equipo/LEO_PERDOMO.jpg" alt="..." />
+            <img src="assets/img/equipo/LEO_PERDOMO.jpg" alt="PERMEDIA" />
             <div class="team-social-icon">
               
               <span class="icon">
@@ -704,7 +659,7 @@
       <div class="swiper-slide">
         <a href="https://www.instagram.com/leoperdomophoto/" target="blank" class="border-0 team-card">
           <div class="team-img-top">
-            <img src="assets/img/equipo/CRISTOPHER_CASTILLO.jpg" alt="..." />
+            <img src="assets/img/equipo/CRISTOPHER_CASTILLO.jpg" alt="PERMEDIA" />
             <div class="team-social-icon">
               
               <span class="icon">
@@ -724,7 +679,7 @@
       <div class="swiper-slide">
         <a href="https://www.instagram.com/leoperdomophoto/" target="blank" class="border-0 team-card">
           <div class="team-img-top">
-            <img src="assets/img/equipo/LUZ_DEL_ALBA.jpg" alt="..." />
+            <img src="assets/img/equipo/LUZ_DEL_ALBA.jpg" alt="PERMEDIA" />
             <div class="team-social-icon">
               
               <span class="icon">
@@ -745,7 +700,7 @@
       <div class="swiper-slide">
         <a href="https://www.instagram.com/leoperdomophoto/" target="blank" class="border-0 team-card">
           <div class="team-img-top">
-            <img src="assets/img/equipo/NICOLE_CABRAL.jpg" alt="..." />
+            <img src="assets/img/equipo/NICOLE_CABRAL.jpg" alt="PERMEDIA" />
             <div class="team-social-icon">
               
               <span class="icon">
@@ -766,7 +721,7 @@
       <div class="swiper-slide">
         <a href="https://www.instagram.com/leoperdomophoto/" target="blank" class="border-0 team-card">
           <div class="team-img-top">
-            <img src="assets/img/equipo/sheisa_patino.jpg" alt="..." />
+            <img src="assets/img/equipo/sheisa_patino.jpg" alt="PERMEDIA" />
             <div class="team-social-icon">
               
               <span class="icon">
@@ -788,7 +743,7 @@
       <div class="swiper-slide">
         <a href="https://www.instagram.com/leoperdomophoto/" target="blank" class="border-0 team-card">
           <div class="team-img-top">
-            <img src="assets/img/equipo/JOSE_m_osoria.jpg" alt="..." />
+            <img src="assets/img/equipo/JOSE_m_osoria.jpg" alt="PERMEDIA" />
             <div class="team-social-icon">
               
               <span class="icon">
@@ -809,7 +764,7 @@
       <div class="swiper-slide">
         <a href="https://www.instagram.com/leoperdomophoto/" target="blank" class="border-0 team-card">
           <div class="team-img-top">
-            <img src="assets/img/equipo/JOCHY_GARCIA_PERDOMO.jpg" alt="..." />
+            <img src="assets/img/equipo/JOCHY_GARCIA_PERDOMO.jpg" alt="PERMEDIA" />
             <div class="team-social-icon">
               
               <span class="icon">
@@ -830,7 +785,7 @@
       <div class="swiper-slide">
         <a href="https://www.instagram.com/leoperdomophoto/" target="blank" class="border-0 team-card">
           <div class="team-img-top">
-            <img src="assets/img/equipo/ANTHONY_SUAREZ.jpg" alt="..." />
+            <img src="assets/img/equipo/ANTHONY_SUAREZ.jpg" alt="PERMEDIA" />
             <div class="team-social-icon">
               
               <span class="icon">
@@ -851,7 +806,7 @@
       <div class="swiper-slide">
         <a href="https://www.instagram.com/leoperdomophoto/" target="blank" class="border-0 team-card">
           <div class="team-img-top">
-            <img src="assets/img/equipo/AUDICONT.jpg" alt="..." />
+            <img src="assets/img/equipo/AUDICONT.jpg" alt="PERMEDIA" />
             <div class="team-social-icon">
               
               <span class="icon">
@@ -872,7 +827,7 @@
       <div class="swiper-slide">
         <a href="https://www.instagram.com/leoperdomophoto/" target="blank" class="border-0 team-card">
           <div class="team-img-top">
-            <img src="assets/img/equipo/ISABEL_GORIS.jpg" alt="..." />
+            <img src="assets/img/equipo/ISABEL_GORIS.jpg" alt="PERMEDIA" />
             <div class="team-social-icon">
               
               <span class="icon">
@@ -908,7 +863,7 @@
             <div class="breadcrumb-caption">
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="223" height="12" viewBox="0 0 223 12" fill="none">
-                  <path d="M1.33789 1.18359H221.034L209.173 10.9822" stroke="#8b0101" stroke-linecap="round"></path>
+                  <path d="M1.33789 1.18359H221.034L209.173 10.9822" stroke="#f60019" stroke-linecap="round"></path>
                 </svg>
               </span>
               <!--
@@ -927,17 +882,133 @@
     <div class="ak-height-150 ak-height-lg-80"></div>
     <div class="ak-center ak-video-block ak-style1 ak-bg">
       <video autoplay muted loop class="video-img ak-bg h-100">
-        <source src="assets/videos/markag-video.mp4" type="video/mp4" />
+        <source src="assets/videos/testimonio.mp4" type="video/mp4" />
         Your browser does not support the video.
       </video>
     </div>
     <!-- End Video -->    
     <!-- End Video Section -->
 
+    <!-- Start Galería -->
+    <div class="ak-height-150 ak-height-lg-80"></div>
+    <section class="pm-gallery" id="galeria">
+      <div class="pm-marquee" aria-hidden="true">
+        <div class="pm-marquee__track" data-pm-loop>
+          <span class="pm-marquee__item">Resultados</span> <span class="pm-marquee__item">Estrategia</span> <span class="pm-marquee__item">Crecimiento</span> <span class="pm-marquee__item">Resultados</span> <span class="pm-marquee__item">Estrategia</span> <span class="pm-marquee__item">Crecimiento</span>
+        </div>
+      </div>
+      <div class="pm-wide">
+        <div class="ak-section-heading ak-style-1">
+          <div class="ak-section-left">
+            <h2 class="ak-section-title text-animation" data-ease="power2.out" data-split-text="chars" data-direction="textTop" data-duration="0.7" data-offset="100%">
+              NUESTRA <span class="highlight">GALERÍA</span>
+            </h2>
+          </div>
+          <div class="ak-section-right">
+            <p class="ak-section-desp text-animation" data-direction="rotationX" data-split-text="lines" data-delay="0.3">
+              Resultados, estrategia &amp; crecimiento.
+            </p>
+          </div>
+        </div>
+        <div class="ak-height-60 ak-height-lg-30"></div>
+        <div class="pm-gallery__grid">
+          <figure class="pm-tile" style="--dc:1/5;--dr:1/2;--mc:span 1;--mr:span 3;--op:50% 40%;">
+            <div class="pm-tile__media"><img src="assets/img/galeria-pm/galeria-01.webp" alt="Selección de materiales y muestras de diseño" loading="lazy" decoding="async" /></div>
+          </figure>
+          <figure class="pm-tile" style="--dc:5/10;--dr:1/2;--mc:span 2;--mr:span 2;--op:60% 50%;">
+            <div class="pm-tile__media"><img src="assets/img/galeria-pm/galeria-02.webp" alt="Profesional de la salud en una clínica Medwork" loading="lazy" decoding="async" /></div>
+          </figure>
+          <figure class="pm-tile" style="--dc:10/13;--dr:1/2;--mc:span 1;--mr:span 3;--op:50% 45%;">
+            <div class="pm-tile__media"><img src="assets/img/galeria-pm/galeria-03.webp" alt="Cirujano durante un procedimiento" loading="lazy" decoding="async" /></div>
+          </figure>
+          <figure class="pm-tile" style="--dc:1/6;--dr:2/3;--mc:span 2;--mr:span 2;--op:50% 40%;">
+            <div class="pm-tile__media"><img src="assets/img/galeria-pm/galeria-04.webp" alt="Equipo trabajando en un barco en puerto" loading="lazy" decoding="async" /></div>
+          </figure>
+          <figure class="pm-tile" style="--dc:6/9;--dr:2/3;--mc:span 1;--mr:span 3;--op:50% 55%;">
+            <div class="pm-tile__media"><img src="assets/img/galeria-pm/galeria-05.webp" alt="Médico revisando muestras al microscopio" loading="lazy" decoding="async" /></div>
+          </figure>
+          <figure class="pm-tile" style="--dc:9/13;--dr:2/3;--mc:span 2;--mr:span 2;--op:50% 60%;">
+            <div class="pm-tile__media"><img src="assets/img/galeria-pm/galeria-06.webp" alt="Grúa descargando en un puerto" loading="lazy" decoding="async" /></div>
+          </figure>
+          <figure class="pm-tile" style="--dc:1/4;--dr:3/4;--mc:span 2;--mr:span 2;--op:50% 50%;">
+            <div class="pm-tile__media"><img src="assets/img/galeria-pm/galeria-07.webp" alt="Equipo de rayos X en un centro médico" loading="lazy" decoding="async" /></div>
+          </figure>
+          <figure class="pm-tile" style="--dc:4/9;--dr:3/4;--mc:span 2;--mr:span 2;--op:45% 50%;">
+            <div class="pm-tile__media"><img src="assets/img/galeria-pm/galeria-08.webp" alt="Reunión de trabajo con un mapa de fondo" loading="lazy" decoding="async" /></div>
+          </figure>
+          <figure class="pm-tile" style="--dc:9/13;--dr:3/4;--mc:span 1;--mr:span 3;--op:50% 55%;">
+            <div class="pm-tile__media"><img src="assets/img/galeria-pm/galeria-09.webp" alt="Mujer revisando muestras de tela y diseño" loading="lazy" decoding="async" /></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <!-- End Galería -->
+
+    <!-- Start Marcas -->
+    <div class="ak-height-150 ak-height-lg-80"></div>
+    <section class="pm-brands" id="marcas">
+      <div class="container">
+        <div class="ak-section-heading ak-style-1">
+          <div class="ak-section-left">
+            <h2 class="ak-section-title text-animation" data-ease="power2.out" data-split-text="chars" data-direction="textTop" data-duration="0.7" data-offset="100%">
+              NUESTRAS <span class="highlight">MARCAS</span>
+            </h2>
+          </div>
+          <div class="ak-section-right">
+            <p class="ak-section-desp text-animation" data-direction="rotationX" data-split-text="lines" data-delay="0.3">
+              Algunas de las marcas en las que hemos estado presentes.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="pm-brands__rows">
+        <div class="pm-brands__row"><div class="pm-brands__track" data-pm-loop>
+            <div class="pm-brand"><img src="assets/img/marcas/the-sip.webp" alt="The SIP Experience" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/medwork.webp" alt="Medwork Global" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/panavisa.webp" alt="Panavisa" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/caceres-torres.webp" alt="Cáceres Torres" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/ironman-703.webp" alt="Ironman 70.3 Cap Cana" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/marriott.webp" alt="Marriott Executive Apartments" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/sport-corner.webp" alt="Sport Corner" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/dolcevita.webp" alt="Dolce Vita" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/laura-tosato.webp" alt="Laura Tosato" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/lowess.webp" alt="Lowess Real Estate" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/dc.webp" alt="DC" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/bravo.webp" alt="Bravo" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/hf.webp" alt="HF" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/mr-home.webp" alt="Mr. Home" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/vistana-costa-blanca.webp" alt="Vistana Costa Blanca" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/prevox.webp" alt="Prevox" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/portazul.webp" alt="Portazul" loading="lazy" decoding="async" /></div>
+        </div></div>
+        <div class="pm-brands__row"><div class="pm-brands__track" data-pm-loop>
+            <div class="pm-brand"><img src="assets/img/marcas/premium-diagnosticos.webp" alt="Premium Diagnósticos" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/vistana-constructora.webp" alt="Vistana Constructora" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/wellness-medwork.webp" alt="Wellness by Medwork" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/grupo-corripio.webp" alt="Grupo Corripio" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/playa-blanca.webp" alt="Playa Blanca" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/halka.webp" alt="Halka Reforesta" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/verdoro.webp" alt="VerdOro" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/fabal-fries.webp" alt="Fabal Fries" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/elilolea.webp" alt="Elilolea" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/by-borja.webp" alt="By Borja Investment" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/fundacion-corripio.webp" alt="Fundación Corripio" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/ad-maiora.webp" alt="AD Maiora" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/luis-oscar-baez.webp" alt="Luis Oscar Báez Acosta" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/dominus.webp" alt="Dominus Spa" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/vascularte.webp" alt="Vascularte" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/servimedic.webp" alt="Servimedic" loading="lazy" decoding="async" /></div>
+            <div class="pm-brand"><img src="assets/img/marcas/medicoms.webp" alt="Medicoms" loading="lazy" decoding="async" /></div>
+        </div></div>
+      </div>
+    </section>
+    <!-- End Marcas -->
+
+
     <!-- Start Video Section -->
     <!-- Start Newsletter -->
     <div class="ak-height-150 ak-height-lg-80"></div>
-    <section class="ak-center newsletter-wapper">
+    <section class="ak-center newsletter-wapper" id="contacto">
       <div class="theme-border-wrap cta-form-border hover-animation">
         <div class="b-top-left">
           <div class="horizontal"></div>
@@ -964,21 +1035,10 @@
                 <span class="highlight text-underlines"> SOLICITA</span> INFORMACION                
               </h2>
             </div>
-            <form class="newsletter-form fade-animation">
-              <input
-                type="email"
-                class="newsletter-input"
-                placeholder="Ingresa tu correo..."
-                required
-              />
-              <button type="submit" class="newsletter-btn">
-                <span class="newbtn-text"> SOLICITA </span>
-                <span class="primary-icon-anim">
-                  <i class="flaticon-up-right-arrow"></i>
-                  <i class="flaticon-up-right-arrow"></i>
-                </span>
-              </button>
-            </form>
+            <div class="pm-cta-buttons fade-animation">
+              <a class="pm-cta-btn pm-cta-btn--call" href="tel:+18297410633"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Llamar</a>
+              <a class="pm-cta-btn pm-cta-btn--wa" href="https://wa.me/18297410633?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20PERMEDIA." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Escribir por WhatsApp</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1022,7 +1082,7 @@
           </div>
           <div class="footer-email">
             <p class="email-short-title">Escribenos!</p>
-            <a href="mailto:info@email.com"> info@email.com</a>
+            <a href="mailto:leonidasperdomolopez@gmail.com"> leonidasperdomolopez@gmail.com</a>
           </div>
         </div>
       </div>
@@ -1032,38 +1092,28 @@
           <img
             class="footer-logo"
             src="assets/img/logo/footer-logo.svg"
-            alt="white-logo.svg"
+            alt="PERMEDIA"
           />
           -->
           <img
             class="footer-logo"
-            src="assets/new/logo.png"
-            alt="white-logo.svg"
+            src="assets/new/logo-permedia.png"
+            alt="PERMEDIA"
           />
           <p class="about-company-desp">
-            En <span>PERMEDIA</span> somos un grupo creativo especializado en producción audiovisual, contenido
+            Somos un <span>grupo creativo</span> especializado en producción audiovisual, contenido
             digital y estrategias de marketing integradas.
           </p>
         </div>
 
         <div class="address-phn">
-          <a href="tel:(406)555-0120" class="phn">
+          <a href="tel:+18297410633" class="phn">
             <span>
               <i class="flaticon-telephone"></i>
             </span>
-            (809) 000-0000
+            +1 (829) 741-0633
           </a>
           <p class="address">Calle la Colina #2, Bella Vista</p>
-        </div>
-
-        <div class="footer-list-content">
-          <ul class="footer-list-menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Portafólio</a></li>
-            <li><a href="#">Contacto</a></li>
-          </ul>
         </div>
       </div>
     </div>
@@ -1072,23 +1122,9 @@
   <div class="copy-right-content">
     <div class="container">
       <div class="ak-space-between">
-        <div class="social-icon">
-          <!--
-          <a href="#" class="icon">
-            <i class="flaticon-facebook"></i>
-          </a>
-          -->
-          <a href="#" class="icon">
-            <i class="flaticon-video"></i>
-          </a>
-          <!--
-          <a href="#" class="icon">
-            <i class="flaticon-linkedin"></i>
-          </a>
-          -->
-        </div>
+        <div class="pm-social"><a href="https://www.youtube.com/@PERMEDIA92" target="_blank" rel="noopener" aria-label="YouTube de PERMEDIA"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a><a href="https://www.instagram.com/permediard/" target="_blank" rel="noopener" aria-label="Instagram de PERMEDIA"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a></div>
         <a href="#" class="copy-right-text"
-          >© 2025 <span>Permedia.</span> Derechos Reservados.</a
+          >© 2026 <span>Permedia.</span> Derechos Reservados.</a
         >
       </div>
     </div>
@@ -1147,6 +1183,7 @@
 <!-- End Video Popup -->
 
 <!-- Script -->
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
 <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
 <script src="assets/js/plugins/swiper.min.js"></script>
@@ -1158,8 +1195,18 @@
 <script src="assets/js/plugins/lenis.min.js"></script>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/gallery.js"></script>
+<script src="assets/js/hero.js"></script>
+<script src="assets/js/services.js"></script>
 
 
     <!-- End Footer Section -->
+  
+<!-- WhatsApp flotante -->
+<a class="pm-wa-float" href="https://wa.me/18297410633?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20servicios%20de%20PERMEDIA." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="pm-wa-float__label">Escríbenos por WhatsApp</span>
+</a>
   </body>
 </html>

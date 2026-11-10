@@ -163,3 +163,52 @@
 /* Selector de tema oculto (no eliminado): el sitio queda en modo oscuro.
    Para mostrarlo desde la consola:  document.querySelector('.mode-toggle').style.display = 'block' */
 .mode-toggle { display: none; }
+
+/* ---------- Barra superior: contacto + idioma ---------- */
+:root { --pm-top-h: 40px; }
+.pm-topbar { position: relative; z-index: 100002; height: var(--pm-top-h); background: #070707; border-bottom: 1px solid rgba(255,255,255,.08); color: #cfcfcf; font-size: 13px; }
+.pm-topbar__in { height: 100%; max-width: 1760px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.pm-topbar__contact { display: flex; align-items: center; gap: 26px; min-width: 0; }
+.pm-topbar__contact a { display: inline-flex; align-items: center; gap: 8px; color: inherit; text-decoration: none; white-space: nowrap; transition: color .25s; }
+.pm-topbar__contact a svg { width: 15px; height: 15px; color: #f60019; flex: 0 0 auto; }
+.pm-topbar__contact a:hover { color: #fff; }
+.pm-lang { display: flex; align-items: center; gap: 8px; }
+.pm-lang svg { width: 15px; height: 15px; color: #f60019; }
+.pm-lang i { font-style: normal; opacity: .4; }
+.pm-lang button { background: none; border: 0; padding: 4px 2px; color: #9a9a9a; font: inherit; font-weight: 700; letter-spacing: .08em; cursor: pointer; transition: color .25s; }
+.pm-lang button:hover { color: #fff; }
+.pm-lang button.is-active { color: #fff; box-shadow: 0 2px 0 #f60019; }
+.pm-hero { height: calc(100vh - var(--pm-top-h)); height: calc(100svh - var(--pm-top-h)); }
+@media (max-width: 767px) {
+  .pm-topbar__in { padding: 0 16px; }
+  .pm-topbar__contact { gap: 16px; }
+  .pm-topbar__contact a:last-child span { display: none; }
+  .pm-topbar__contact a:last-child svg { width: 18px; height: 18px; }
+}
+.pm-topbar__contact a, .pm-topbar__contact a span { font-size: 13px; line-height: 1; }
+/* cada palabra del título "Quiénes somos / Who we are" en su propia línea, en cualquier idioma */
+.digital-agencye-hero.style-1 .hero-left-column .title-box .title .digital,
+.digital-agencye-hero.style-1 .hero-left-column .title-box .title .agency { display: block; }
+/* el header fijo arranca justo debajo de la barra superior (al hacer scroll se pega arriba como siempre) */
+.ak-site_header.ak-sticky_header:not(.ak-gescout_sticky) { top: var(--pm-top-h); }
+
+/* ---------- Selector claro / oscuro en la barra superior ---------- */
+.pm-topbar__right { display: flex; align-items: center; gap: 18px; }
+.pm-theme { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(255,255,255,.2); background: transparent; color: #cfcfcf; display: grid; place-items: center; cursor: pointer; padding: 0; transition: background .25s, color .25s, border-color .25s; }
+.pm-theme svg { width: 15px; height: 15px; grid-area: 1 / 1; }
+.pm-theme:hover { background: #f60019; border-color: #f60019; color: #fff; }
+.pm-theme .i-moon { display: none; }
+.pm-theme.is-light .i-sun { display: none; }
+.pm-theme.is-light .i-moon { display: block; }
+/* modo claro: la barra se aclara */
+body:not(.dark) .pm-topbar { background: #f3f3f3; border-bottom-color: rgba(0,0,0,.08); color: #3a3a3a; }
+body:not(.dark) .pm-topbar__contact a:hover { color: #000; }
+body:not(.dark) .pm-lang button { color: #6a6a6a; }
+body:not(.dark) .pm-lang button:hover, body:not(.dark) .pm-lang button.is-active { color: #000; }
+body:not(.dark) .pm-theme { border-color: rgba(0,0,0,.25); color: #3a3a3a; }
+body:not(.dark) .pm-theme:hover { color: #fff; }
+
+/* ---------- Ajustes de modo claro ---------- */
+body:not(.dark) .ak-site_header.ak-sticky_header:not(.ak-gescout_sticky) { background: #fff; box-shadow: 0 1px 0 rgba(0,0,0,.06); }
+body:not(.dark) .about-content-style2 .about-title,
+body:not(.dark) .breadcrumb-stroke { -webkit-text-stroke-color: #7a7a7a; }

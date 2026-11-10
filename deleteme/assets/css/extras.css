@@ -1,0 +1,165 @@
+/* PERMEDIA - extras: WhatsApp flotante, redes en header, botones de contacto */
+:root { --pm-wa: #25d366; }
+
+/* ---------- Header: botón Contáctanos más pequeño + redes a la izquierda ---------- */
+.btn-wrapper .button-container .custom-button { width: 142px; height: 42px; padding: 3px; }
+.btn-wrapper .button-container .custom-button svg { width: 142px; height: 42px; }
+.btn-wrapper .button-container .custom-button span { font-size: 13px; font-weight: 600; letter-spacing: .06em; margin-top: 2px; }
+.pm-head-social { display: flex; align-items: center; gap: 10px; }
+.pm-head-social a, .pm-social a {
+  width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-color);
+  display: grid; place-items: center; color: var(--black-color);
+  transition: background .3s, color .3s, border-color .3s, transform .3s;
+}
+.pm-head-social a svg, .pm-social a svg { width: 18px; height: 18px; display: block; }
+.pm-head-social a:hover, .pm-social a:hover { background: var(--primary-color); border-color: var(--primary-color); color: #fff; transform: translateY(-3px); }
+@media (max-width: 991px) { .pm-head-social { display: none; } }
+
+/* ---------- Menú lateral ---------- */
+.offcanvas-body-coustom-style .offcanvas-footer-contant .email { font-size: 22px; word-break: break-word; }
+.offcanvas-body-coustom-style .desp { font-size: 28px; font-weight: 700; line-height: 125%; color: var(--black-color); margin: 30px 0 10px; }
+.pm-social { display: flex; gap: 12px; }
+.pm-social a { width: 46px; height: 46px; }
+.pm-social a svg { width: 20px; height: 20px; }
+.copy-right-content .pm-social a { width: 40px; height: 40px; }
+
+/* ---------- Botones de contacto (sustituyen el input de correo) ---------- */
+.pm-cta-buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+.pm-cta-btn {
+  display: inline-flex; align-items: center; gap: 9px; padding: 11px 24px; border-radius: 50px;
+  font-size: 13px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; text-decoration: none;
+  border: 1.5px solid transparent; transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, background .3s, color .3s;
+}
+.pm-cta-btn svg { width: 17px; height: 17px; flex: 0 0 auto; }
+.pm-cta-btn--call { background: var(--primary-color); color: #fff; }
+.pm-cta-btn--call:hover { background: #ff2a40; transform: translateY(-4px); box-shadow: 0 16px 34px -12px rgba(246, 0, 25,.7); color: #fff; }
+.pm-cta-btn--wa { border-color: var(--pm-wa); color: var(--pm-wa); background: transparent; }
+.pm-cta-btn--wa:hover { background: var(--pm-wa); color: #0b2e18; transform: translateY(-4px); box-shadow: 0 16px 34px -12px rgba(37,211,102,.7); }
+@media (max-width: 575px) { .pm-cta-btn { width: 100%; justify-content: center; padding: 12px 18px; } }
+
+/* ---------- WhatsApp flotante ---------- */
+.pm-wa-float {
+  position: fixed; right: 33px; bottom: 30px; z-index: 111112; width: 64px; height: 64px; border-radius: 50%;
+  background: var(--pm-wa); color: #fff; display: grid; place-items: center; text-decoration: none;
+  box-shadow: 0 10px 30px -6px rgba(37,211,102,.7); transition: transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.pm-wa-float svg { width: 34px; height: 34px; position: relative; z-index: 1; }
+.pm-wa-float::before, .pm-wa-float::after {
+  content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--pm-wa);
+  animation: pmWaPulse 2.4s ease-out infinite;
+}
+.pm-wa-float::after { animation-delay: 1.2s; }
+.pm-wa-float:hover { transform: scale(1.1); color: #fff; }
+.pm-wa-float__label {
+  position: absolute; right: 78px; top: 50%; transform: translateY(-50%) translateX(10px); white-space: nowrap;
+  background: #fff; color: #101010; font-size: 14px; font-weight: 600; padding: 9px 16px; border-radius: 30px;
+  opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s; box-shadow: 0 8px 24px -8px rgba(0,0,0,.5);
+}
+.pm-wa-float:hover .pm-wa-float__label, .pm-wa-float:focus-visible .pm-wa-float__label { opacity: 1; transform: translateY(-50%); }
+@keyframes pmWaPulse { from { transform: scale(1); opacity: .7; } to { transform: scale(1.7); opacity: 0; } }
+/* el botón de subir queda justo encima del WhatsApp */
+.ak-scrollup.ak-scrollup-show { bottom: 118px; right: 40px; }
+@media (max-width: 767px) {
+  .pm-wa-float { right: 18px; bottom: 18px; width: 58px; height: 58px; }
+  .pm-wa-float__label { display: none; }
+  .ak-scrollup.ak-scrollup-show { bottom: 90px; right: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { .pm-wa-float::before, .pm-wa-float::after { animation: none; } }
+
+/* ---------- Video con autoplay: botón de sonido ---------- */
+.pm-video__sound {
+  position: absolute; z-index: 3; right: 24px; bottom: 22px; display: inline-flex; align-items: center; gap: 10px;
+  padding: 11px 20px; border-radius: 40px; border: 1px solid rgba(255,255,255,.35); background: rgba(0,0,0,.55);
+  color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; cursor: pointer;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); transition: background .3s, border-color .3s;
+}
+.pm-video__sound svg { width: 18px; height: 18px; }
+.pm-video__sound:hover { background: var(--primary-color); border-color: var(--primary-color); }
+.pm-video.has-sound .pm-video__sound { display: none; }
+
+/* el contenedor del botón estaba fuera de flujo (absolute, ancho 0): lo dejamos en flujo para que las redes no lo pisen */
+.ak-main-header-right .btn-wrapper { width: 142px; height: 42px; }
+.ak-main-header-right .btn-wrapper .button-container { position: relative; right: auto; top: auto; width: 142px; height: 42px; }
+@media (max-width: 575px) { .ak-main-header-right .btn-wrapper { display: none; } }
+
+/* ---------- Galería: contenedor más ancho ---------- */
+.pm-wide { width: 100%; max-width: 1760px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 991px) { .pm-wide { padding: 0 20px; } }
+
+/* ---------- Footer: dirección y teléfono más pequeños, logo ancho ---------- */
+.ak-footer.style-1 .ak-footer-container .footer-content .address-phn .phn { font-size: 16px; font-weight: 600; }
+.ak-footer.style-1 .ak-footer-container .footer-content .address-phn .address { font-size: 14px; }
+.ak-footer.style-1 .ak-footer-container .footer-content .about-company .footer-logo { max-width: 230px; max-height: none; width: auto; height: auto; }
+.offcanvas-logo-content img { max-width: 210px; height: auto; }
+
+/* ---------- Logo por modo (tarjetas de servicios) ---------- */
+.pm-logo-l { display: none; }
+.dark .pm-logo-l { display: block; }
+.dark .pm-logo-d { display: none; }
+
+/* ---------- Anclas con header fijo ---------- */
+#nosotros, #servicios, #galeria, #contacto, #marcas, #vision, #resultados { scroll-margin-top: 110px; }
+
+/* que el WhatsApp flotante no tape el copyright */
+.copy-right-content .copy-right-text { padding-right: 96px; }
+@media (max-width: 767px) { .copy-right-content .copy-right-text { padding-right: 0; } .copy-right-content { padding-bottom: 80px; } }
+
+/* footer: "PERMEDIA" con el mismo tipo de letra que el párrafo (sin cursiva ni subrayado) */
+.ak-footer.style-1 .ak-footer-container .footer-content .about-company .about-company-desp span {
+  font-style: normal; font-family: inherit; font-weight: inherit; letter-spacing: inherit;
+  text-decoration: none; border: 0;
+}
+
+/* ---------- Quiénes somos: texto dentro del marco + efecto de scroll ---------- */
+.pm-red, .pm-red * { color: #f60019 !important; }
+.digital-agencye-hero.style-1 .hero-right-column .image-box {
+  display: flex; align-items: center; padding: 60px 64px; min-height: 400px;
+}
+.digital-agencye-hero.style-1 .hero-right-column .image-box .pm-frame-text {
+  position: relative; z-index: 2; margin: 0; padding: 0; max-width: 760px;
+  font-size: 26px; line-height: 155%; font-weight: 500;
+}
+.digital-agencye-hero.style-1 .hero-left-column .title-box { margin-bottom: 0; }
+@media (max-width: 991px) {
+  .digital-agencye-hero.style-1 .hero-right-column .image-box { height: auto; min-height: 0; padding: 40px 28px; }
+  .digital-agencye-hero.style-1 .hero-right-column .image-box .pm-frame-text { font-size: 22px; }
+}
+@media (max-width: 991px) {
+  .digital-agencye-hero.style-1 .hero-right-column { max-width: 100%; width: 100%; gap: 30px; }
+  .digital-agencye-hero.style-1 .hero-left-column .title-box { margin-bottom: 10px; }
+  .digital-agencye-hero.style-1 .hero-left-column .title-box .title { line-height: 1.05; }
+  .digital-agencye-hero.style-1 .hero-left-column .title-box .title .digital { font-size: clamp(48px, 17vw, 120px); display: block; }
+  .digital-agencye-hero.style-1 .hero-left-column .title-box .title .agency { font-size: clamp(52px, 19vw, 130px); display: block; }
+  .digital-agencye-hero.style-1 .hero-right-column .image-box .da-shape-star { left: -30px; top: -30px; width: 60px; }
+}
+
+/* los dos párrafos de "Quiénes somos" comparten tamaño, grosor e interlineado */
+.digital-agencye-hero.style-1 .hero-right-column > .description,
+.digital-agencye-hero.style-1 .hero-right-column .image-box .pm-frame-text {
+  font-size: 22px; line-height: 165%; font-weight: 400;
+}
+@media (max-width: 991px) {
+  .digital-agencye-hero.style-1 .hero-right-column > .description,
+  .digital-agencye-hero.style-1 .hero-right-column .image-box .pm-frame-text { font-size: 18px; }
+}
+
+/* ---------- Servicios: el logo "pm." de la izquierda gira al cambiar de línea ---------- */
+.awards-card .awards-img { height: 56px; min-width: 1px; }
+.awards-card .awards-img img { display: none; }
+.awards-box .awards-hover-image { isolation: isolate; left: 0; }
+.awards-box .awards-hover-image::before {
+  content: ""; position: absolute; inset: -14% -30%; z-index: -1; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(246, 0, 25, .32), transparent 72%);
+}
+.awards-box .awards-hover-image img { min-width: 0; width: clamp(200px, 17vw, 330px); max-width: none; height: auto; display: block; transform-style: preserve-3d; filter: invert(1) hue-rotate(180deg); }
+.dark .awards-box .awards-hover-image img { filter: none; }
+@media (max-width: 767px) { .awards-card .awards-img { display: none; } }
+
+/* ---------- Franja de 3 imágenes: sin cajas de información en hover ---------- */
+.dm-service-items .service-item .service-hover-info { display: none !important; }
+.dm-service-items .service-item { cursor: default; }
+#sobre-nosotros { scroll-margin-top: 110px; }
+
+/* Selector de tema oculto (no eliminado): el sitio queda en modo oscuro.
+   Para mostrarlo desde la consola:  document.querySelector('.mode-toggle').style.display = 'block' */
+.mode-toggle { display: none; }

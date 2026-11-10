@@ -1,0 +1,47 @@
+/* PERMEDIA - Hero animado en SVG */
+.pm-hero {
+  position: relative; height: 100vh; height: 100svh; min-height: 580px; margin-top: -190px;
+  overflow: hidden; background: #0b0b0b; isolation: isolate;
+}
+@media (max-width: 991px) { .pm-hero { margin-top: -80px; } }
+.pm-hero__svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; font-family: var(--heading-font-family, "Epilogue", Arial, sans-serif); }
+.pm-hero__svg text { font-family: inherit; }
+.pm-hero__svg .sc { opacity: 0; }
+.pm-hero__svg .sc.is-final { opacity: 1; }
+.pm-hero__cta { cursor: pointer; }
+.pm-hero__cta rect { transition: fill .3s; }
+.pm-hero__cta:hover rect { fill: #ff3347; }
+
+/* HUD tipo cámara */
+.pm-hud {
+  position: absolute; z-index: 3; left: 0; right: 0; bottom: 54px; padding: 0 40px;
+  display: flex; align-items: center; justify-content: center; gap: 18px; pointer-events: none; color: #fff;
+}
+.pm-hud > * { pointer-events: auto; }
+.pm-hud__btn {
+  width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,.22); background: transparent;
+  color: #fff; display: grid; place-items: center; cursor: pointer; transition: background .3s, border-color .3s;
+}
+.pm-hud__btn:hover { background: #f60019; border-color: #f60019; }
+.pm-hud__btn svg { width: 13px; height: 13px; }
+.pm-hud__btn .i-play { display: none; }
+.pm-hero.is-paused .pm-hud__btn .i-play { display: block; }
+.pm-hero.is-paused .pm-hud__btn .i-pause { display: none; }
+.pm-hud__rec { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; letter-spacing: .14em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.pm-hud__rec i { width: 10px; height: 10px; border-radius: 50%; background: #f60019; animation: pmRec 1.2s steps(1) infinite; }
+.pm-hero.is-paused .pm-hud__rec i { animation: none; opacity: .4; }
+@keyframes pmRec { 50% { opacity: 0; } }
+.pm-hud__bars { display: flex; gap: 10px; width: 150px; }
+.pm-hud__bar { flex: 1; height: 26px; background: none; border: 0; cursor: pointer; position: relative; padding: 0; }
+.pm-hud__bar::before { content: ""; position: absolute; left: 0; right: 0; top: 12px; height: 3px; background: rgba(255,255,255,.22); border-radius: 3px; }
+.pm-hud__bar::after { content: ""; position: absolute; left: 0; top: 12px; height: 3px; width: calc(var(--p, 0) * 100%); background: #f60019; border-radius: 3px; }
+.pm-hud__bar:hover::before { background: rgba(255,255,255,.4); }
+.pm-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+@media (max-width: 767px) {
+  .pm-hud { padding: 0 20px; bottom: 44px; gap: 14px; }
+  .pm-hud__rec { font-size: 11px; }
+  .pm-hud__bars { gap: 5px; }
+}
+@media (prefers-reduced-motion: reduce) { .pm-hud__rec i { animation: none; } }
+
+.pm-hero:not(.is-ready) #pmLogoPar, .pm-hero:not(.is-ready) #pmLemaPar { opacity: 0; }

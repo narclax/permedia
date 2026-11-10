@@ -3,7 +3,9 @@
   "use strict";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var hasGsap = !!(window.gsap && window.ScrollTrigger);
-  var tags = ["Resultados", "Estrategia", "Crecimiento"];
+  var EN = window.PM_LANG === "en";
+  var tags = EN ? ["Results", "Strategy", "Growth"] : ["Resultados", "Estrategia", "Crecimiento"];
+  var L = EN ? { zoom: "Enlarge photo", close: "Close", prev: "Previous", next: "Next", dlg: "Image gallery" } : { zoom: "Ampliar foto", close: "Cerrar", prev: "Anterior", next: "Siguiente", dlg: "Galería de imágenes" };
 
   /* ---------- Marquees: duplicar contenido para loop continuo ---------- */
   document.querySelectorAll("[data-pm-loop]").forEach(function (track) {
@@ -47,7 +49,7 @@
     var tag = tags[i % 3];
     t.setAttribute("tabindex", "0");
     t.setAttribute("role", "button");
-    t.setAttribute("aria-label", "Ampliar foto " + n + " – " + tag);
+    t.setAttribute("aria-label", L.zoom + " " + n + " – " + tag);
     t.dataset.tag = tag;
     t.dataset.n = n;
     if (!t.querySelector(".pm-tile__cap")) {
@@ -109,12 +111,12 @@
   lb.className = "pm-lightbox";
   lb.setAttribute("role", "dialog");
   lb.setAttribute("aria-modal", "true");
-  lb.setAttribute("aria-label", "Galería de imágenes");
+  lb.setAttribute("aria-label", L.dlg);
   lb.setAttribute("data-lenis-prevent", "");
   lb.innerHTML =
-    '<button class="pm-lightbox__close" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button>' +
-    '<button class="pm-lightbox__prev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>' +
-    '<button class="pm-lightbox__next" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>' +
+    '<button class="pm-lightbox__close" aria-label="' + L.close + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button>' +
+    '<button class="pm-lightbox__prev" aria-label="' + L.prev + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>' +
+    '<button class="pm-lightbox__next" aria-label="' + L.next + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>' +
     '<div class="pm-lightbox__stage"><img class="pm-lightbox__img" alt=""></div>' +
     '<div class="pm-lightbox__bar"><div class="pm-lightbox__tag"></div><div class="pm-lightbox__count"></div></div>';
   document.body.appendChild(lb);
