@@ -3,9 +3,12 @@
   "use strict";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var hasGsap = !!(window.gsap && window.ScrollTrigger);
-  var EN = window.PM_LANG === "en";
-  var tags = EN ? ["Results", "Strategy", "Growth"] : ["Resultados", "Estrategia", "Crecimiento"];
-  var L = EN ? { zoom: "Enlarge photo", close: "Close", prev: "Previous", next: "Next", dlg: "Image gallery" } : { zoom: "Ampliar foto", close: "Cerrar", prev: "Anterior", next: "Siguiente", dlg: "Galería de imágenes" };
+  var STR = {
+    en: { tags: ["Results", "Strategy", "Growth"], L: { zoom: "Enlarge photo", close: "Close", prev: "Previous", next: "Next", dlg: "Image gallery", view: "View" } },
+    es: { tags: ["Resultados", "Estrategia", "Crecimiento"], L: { zoom: "Ampliar foto", close: "Cerrar", prev: "Anterior", next: "Siguiente", dlg: "Galería de imágenes", view: "Ver" } }
+  };
+  var tags = (STR[window.PM_LANG] || STR.es).tags;
+  var L = (STR[window.PM_LANG] || STR.es).L;
 
   /* ---------- Marquees: duplicar contenido para loop continuo ---------- */
   document.querySelectorAll("[data-pm-loop]").forEach(function (track) {
@@ -84,7 +87,7 @@
   /* spotlight + cursor "Ver" */
   var cursor = document.createElement("div");
   cursor.className = "pm-cursor";
-  cursor.textContent = "Ver";
+  cursor.textContent = L.view;
   document.body.appendChild(cursor);
   if (hasGsap) gsap.set(cursor, { scale: 0.3, opacity: 0 });
   var cx = hasGsap ? gsap.quickTo(cursor, "x", { duration: 0.35, ease: "power3" }) : null;
@@ -182,6 +185,25 @@
     var dx = e.changedTouches[0].clientX - sx; sx = null;
     if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
   }, { passive: true });
+
+
+  /* ---------- cambio de idioma en vivo ---------- */
+  function relabel(lang) {
+    var S = STR[lang] || STR.es; tags = S.tags; L = S.L;
+    tiles.forEach(function (t, i) {
+      var n = ("0" + (i + 1)).slice(-2), tag = tags[i % 3];
+      t.dataset.tag = tag;
+      t.setAttribute("aria-label", L.zoom + " " + n + " – " + tag);
+      var tg = t.querySelector(".pm-tile__tag"); if (tg) tg.innerHTML = tag + " <em>✦</em>";
+    });
+    cursor.textContent = L.view;
+    lb.setAttribute("aria-label", L.dlg);
+    lb.querySelector(".pm-lightbox__close").setAttribute("aria-label", L.close);
+    lb.querySelector(".pm-lightbox__prev").setAttribute("aria-label", L.prev);
+    lb.querySelector(".pm-lightbox__next").setAttribute("aria-label", L.next);
+    if (lb.classList.contains("is-open")) lbTag.textContent = tiles[current].dataset.tag;
+  }
+  if (window.PM_i18n) window.PM_i18n.on(relabel);
 
   if (hasGsap) window.addEventListener("load", function () { ScrollTrigger.refresh(); });
 })();

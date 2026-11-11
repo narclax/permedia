@@ -143,6 +143,10 @@
   /* ---------- init ---------- */
   function init() {
     measure(); layout(); build();
+    if (window.PM_i18n) window.PM_i18n.on(function (l) {
+      measure(); layout();
+      bars.forEach(function (b, k) { b.setAttribute("aria-label", (l === "en" ? "Go to slide " : "Ir al slide ") + (k + 1) + ": " + labels[k]); });
+    });
     master.eventCallback("onUpdate", hud);
     if (reduce) {
       setBlurZero(); master.time(2.4); master.pause(); hero.classList.add("is-paused"); userPaused = true; paused = true;

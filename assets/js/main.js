@@ -830,7 +830,7 @@
     if ($.exists(".text-animation")) {
       const fadeArray = gsap.utils.toArray(".text-animation");
 
-      fadeArray.forEach((item) => {
+      const initTextAnimation = (item) => {
         let split_text = item.getAttribute("data-split-text") || "chars";
 
         let titleSplit = new SplitText(item, { type: "chars,words" });
@@ -902,9 +902,11 @@
             },
           };
         }
-        gsap.from(elementsToAnimate, animationProps);
-
-      })
+        item._pmSplit = titleSplit;
+        item._pmTween = gsap.from(elementsToAnimate, animationProps);
+      };
+      fadeArray.forEach(initTextAnimation);
+      window.PM_initTextAnimation = initTextAnimation;
 
     }
   }
@@ -966,6 +968,13 @@
   /*--------------------------------------------------------------
    13. Text Color Change
    --------------------------------------------------------------*/
+  window.PM_cleanText = function (el) {
+    var t = el._pmTween || el._pmTl;
+    if (t) { if (t.scrollTrigger) t.scrollTrigger.kill(); t.kill(); }
+    if (el._pmSplit && el._pmSplit.revert) el._pmSplit.revert();
+    el._pmTween = el._pmTl = el._pmSplit = null;
+  };
+  window.PM_textColorShiption = function () { textColorShiption(); };
   function textColorShiption() {
     if ($.exists(".text-color-shiption")) {
       const darkMode = gsap.utils.toArray(".dark");
@@ -973,6 +982,7 @@
       const textColorShiption = gsap.utils.toArray(".text-color-shiption");
 
       textColorShiption.forEach((elem) => {
+        if (window.PM_cleanText) window.PM_cleanText(elem);
         let colorText = +elem.getAttribute("data-color") || 0;
 
 
@@ -996,6 +1006,8 @@
             markers: false,
           }
         });
+        elem._pmSplit = splitTexdsft;
+        elem._pmTl = tl;
         tl.to(splitTexdsft.chars, {
           color: "var(--black-color)",
           stagger: 0.2,

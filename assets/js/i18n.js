@@ -1,7 +1,7 @@
-/* PERMEDIA - Cambio de idioma ES / EN (se carga antes que el resto de scripts) */
+/* PERMEDIA - Cambio de idioma ES / EN en vivo, sin recargar la página (se carga antes que el resto de scripts) */
 (function () {
   "use strict";
-  var KEY = "pm-lang", lang = "es";
+  var KEY = "pm-lang", lang = "es", hooks = [];
   function read() {
     try { var v = localStorage.getItem(KEY); if (v === "en" || v === "es") return v; } catch (e) {}
     var m = /pm-lang=(en|es)/.exec(window.name || ""); return m ? m[1] : null;
@@ -89,40 +89,97 @@
     "Idioma": "Language", "Cambiar tema": "Toggle theme"
   };
 
+  /* ---- utilidades ---- */
+  function norm(s) { return s.replace(/\s+/g, " ").trim(); }
+  function has(core) { return Object.prototype.hasOwnProperty.call(D, core); }
   function tr(s) {
-    var core = s.replace(/\s+/g, " ").trim();
-    if (!core || !Object.prototype.hasOwnProperty.call(D, core)) return null;
-    var lead = /^\s*/.exec(s)[0], trail = /\s*$/.exec(s)[0];
-    return lead + D[core] + trail;
+    var core = norm(s);
+    if (!core || !has(core)) return null;
+    return /^\s*/.exec(s)[0] + D[core] + /\s*$/.exec(s)[0];
   }
-  function translate() {
-    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+  var SPLIT = ".text-animation, .text-color-shiption";   // elementos que main.js divide en letras (SplitText)
+  var origText = new Map(), origAttr = new Map(), splitEls = [];
+  var ATTRS = ["alt", "aria-label", "title", "placeholder"];
+
+  function walkText(root, fn) {
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
       acceptNode: function (n) {
         var p = n.parentNode && n.parentNode.nodeName.toLowerCase();
         return (p === "script" || p === "style" || p === "noscript") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
       }
     }), n, list = [];
     while ((n = w.nextNode())) list.push(n);
-    list.forEach(function (t) { var r = tr(t.nodeValue); if (r !== null) t.nodeValue = r; });
-    ["alt", "aria-label", "title", "placeholder"].forEach(function (a) {
-      Array.prototype.forEach.call(document.querySelectorAll("[" + a + "]"), function (e) {
-        var r = tr(e.getAttribute(a)); if (r !== null) e.setAttribute(a, r);
+    list.forEach(fn);
+  }
+  // guarda el texto original (español) solo de lo que tiene traducción
+  function scan() {
+    Array.prototype.forEach.call(document.querySelectorAll(SPLIT), function (el) {
+      if (splitEls.indexOf(el) < 0) { splitEls.push(el); el._pmOrigHTML = el.innerHTML; }
+    });
+    walkText(document.body, function (n) {
+      if (origText.has(n)) return;
+      var p = n.parentElement; if (p && p.closest && p.closest(SPLIT)) return;
+      if (tr(n.nodeValue) !== null) origText.set(n, n.nodeValue);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[alt],[aria-label],[title],[placeholder]"), function (e) {
+      if (e.closest && e.closest(SPLIT)) return;
+      ATTRS.forEach(function (a) {
+        var v = e.getAttribute(a); if (v === null) return;
+        if (tr(v) !== null) { var o = origAttr.get(e) || {}; if (!(a in o)) { o[a] = v; origAttr.set(e, o); } }
       });
     });
   }
-  if (lang === "en") {
-    translate();
-    // elementos que se agregan al final del <body> (p. ej. el WhatsApp flotante)
-    document.addEventListener("DOMContentLoaded", translate);
+  function trHTML(html) {
+    var t = document.createElement("template"); t.innerHTML = html;
+    walkText(t.content, function (n) { var r = tr(n.nodeValue); if (r !== null) n.nodeValue = r; });
+    return t.innerHTML;
   }
-
-  /* botones del selector de idioma */
-  Array.prototype.forEach.call(document.querySelectorAll(".pm-lang [data-lang]"), function (b) {
-    var on = b.getAttribute("data-lang") === lang;
-    b.classList.toggle("is-active", on); b.setAttribute("aria-pressed", on ? "true" : "false");
-    b.addEventListener("click", function () {
-      var v = b.getAttribute("data-lang"); if (v === lang) return;
-      save(v); location.reload();
+  function apply(l) {
+    origText.forEach(function (orig, node) {
+      if (!node.isConnected) { origText.delete(node); return; }
+      var r = l === "en" ? tr(orig) : null; node.nodeValue = r !== null ? r : orig;
     });
+    origAttr.forEach(function (o, el) {
+      for (var a in o) { var r = l === "en" ? tr(o[a]) : null; el.setAttribute(a, r !== null ? r : o[a]); }
+    });
+  }
+  // textos con efecto de letras: se restauran, se traducen y se vuelve a lanzar el efecto
+  function applySplit(l, live) {
+    splitEls.forEach(function (el) {
+      var html = l === "en" ? trHTML(el._pmOrigHTML) : el._pmOrigHTML;
+      if (live) {
+        if (window.PM_cleanText) window.PM_cleanText(el);
+        el.innerHTML = html;
+        if (el.matches(".text-animation") && window.PM_initTextAnimation) window.PM_initTextAnimation(el);
+      } else { el.innerHTML = html; }
+    });
+    if (live && window.PM_textColorShiption) window.PM_textColorShiption();
+  }
+  function paintButtons() {
+    Array.prototype.forEach.call(document.querySelectorAll(".pm-lang [data-lang]"), function (b) {
+      var on = b.getAttribute("data-lang") === lang;
+      b.classList.toggle("is-active", on); b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
+  function setLang(l) {
+    if ((l !== "en" && l !== "es") || l === lang) return;
+    lang = l; window.PM_LANG = l; save(l);
+    document.documentElement.lang = l;
+    scan(); apply(l); applySplit(l, true); paintButtons();
+    hooks.forEach(function (fn) { try { fn(l); } catch (e) {} });
+    if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+  }
+  window.PM_i18n = { on: function (fn) { hooks.push(fn); }, setLang: setLang, get lang() { return lang; } };
+
+  /* ---- arranque: antes de que main.js divida los textos ---- */
+  scan();
+  if (lang === "en") { apply("en"); applySplit("en", false); }
+  document.addEventListener("DOMContentLoaded", function () {
+    scan();                                   // nodos agregados al final del <body> (p. ej. el WhatsApp flotante)
+    if (lang === "en") apply("en");
+    Array.prototype.forEach.call(document.querySelectorAll(".pm-lang [data-lang]"), function (b) {
+      b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
+    });
+    paintButtons();
   });
 })();
